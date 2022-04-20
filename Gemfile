@@ -41,6 +41,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'mini_racer'
 
+#Use devise for user authentication
+gem 'devise'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

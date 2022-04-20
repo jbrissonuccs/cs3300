@@ -25,6 +25,11 @@ RSpec.feature "Projects", type: :feature do
   context "Update project" do
     let(:project) { Project.create(title: "Test title", description: "Test content") }
     before(:each) do
+      visit new_user_registration_path
+      fill_in "Email", with: "Test@uccs.edu"
+      fill_in "Password", with: "Test123"
+      fill_in "Password confirmation", with: "Test123"
+      click_button "Sign up"
       visit edit_project_path(project)
     end
 
@@ -47,6 +52,13 @@ RSpec.feature "Projects", type: :feature do
 
   context "Remove existing project" do
     let!(:project) { Project.create(title: "Test title", description: "Test content") }
+    before(:each) do
+      visit new_user_registration_path
+      fill_in "Email", with: "Test@uccs.edu"
+      fill_in "Password", with: "Test123"
+      fill_in "Password confirmation", with: "Test123"
+      click_button "Sign up"
+    end
     scenario "remove project" do
       visit projects_path
       click_link "Destroy"
