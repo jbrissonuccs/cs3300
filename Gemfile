@@ -44,6 +44,11 @@ gem 'mini_racer'
 #Use devise for user authentication
 gem 'devise'
 
+#Use Bootstrap for UI styles
+gem 'bootstrap', '~> 4.6.1'
+
+gem 'jquery-rails'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'

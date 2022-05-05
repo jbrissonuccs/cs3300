@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+<main role="main" class="text-center">
+<h1 class="cover-heading"><%= @project.title %></h1>
+<p class="lead"><%= @project.description %></p>
+<li class="lead">
+  <%= link_to 'Edit',edit_project_path(@project), :class => "btn btn-lg btn-secondary" if user_signed_in?%>
+</li>
+<li class="lead">
+  <a class="btn btn-lg btn-secondary" href="/">Back</a>
+</li>
+</main>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) if user_signed_in?%> |
-<%= link_to 'Back', projects_path %>
